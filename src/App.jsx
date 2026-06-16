@@ -739,6 +739,13 @@ export function App() {
   const act = AppStateReducer(setState);
   const totals = useTotals(state);
 
+  useEffect(() => {
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.scrollingElement?.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    });
+  }, [state.route]);
+
   return (
     <div className="app-shell">
       <TopBar state={state} act={act} />
