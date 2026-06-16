@@ -555,7 +555,7 @@ img {
 }
 
 .promo-card {
-  flex: 0 0 288px;
+  flex: 0 0 240px;
   scroll-snap-align: start;
 }
 
@@ -580,6 +580,29 @@ img {
   font-size: 24px;
   font-weight: 400;
   line-height: 28px;
+}
+
+.promo-cta-card {
+  display: inline-flex;
+  flex: 0 0 180px;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  min-height: 248px;
+  padding: 24px;
+  scroll-snap-align: start;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: var(--surface-bright);
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+}
+
+.promo-cta-card span {
+  max-width: 96px;
 }
 
 .service-meta {
@@ -1440,7 +1463,7 @@ img {
   }
 
   .page {
-    width: calc(100vw - 40px);
+    width: calc(100% - 40px);
     margin: 32px auto 40px;
   }
 
@@ -1466,8 +1489,8 @@ img {
 
   .room-card {
     order: 1;
-    width: calc(100vw - 40px);
-    max-width: calc(100vw - 40px);
+    width: 100%;
+    max-width: 100%;
   }
 
   .room-header {
@@ -1498,8 +1521,14 @@ img {
     height: 64px;
   }
 
-  .carousel-shell::after {
-    width: 72px;
+  .room-card .carousel-shell::before,
+  .room-card .carousel-shell::after {
+    width: 80px;
+  }
+
+  .room-card .carousel-prev,
+  .room-card .carousel-next {
+    display: none;
   }
 
   .carousel-next {
@@ -1562,11 +1591,26 @@ img {
   }
 
   .promo-card {
-    min-width: 182px;
+    flex-basis: 200px;
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .room-card .promo-shell {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .room-card .promo-shell .promo-row {
+    gap: 12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    scroll-padding-right: 20px;
+    scroll-padding-left: 20px;
   }
 
   .promo-card img {
-    height: 178px;
+    height: 140px;
   }
 
   .promo-card a {
@@ -1575,6 +1619,13 @@ img {
 
   .promo-card p b {
     font-size: 20px;
+  }
+
+  .promo-cta-card {
+    flex-basis: 180px;
+    min-width: 180px;
+    max-width: 180px;
+    min-height: 248px;
   }
 
   .services-page {
